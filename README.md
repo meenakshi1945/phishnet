@@ -51,12 +51,13 @@ It’s a **hybrid intelligence framework** that watches over your web pages like
 
 ##  Key Features
 
-- ✅ **Real-time** page analysis  
-- ✅ **Multi-layer detection** (not just URLs!)  
-- ✅ **Explains** why something is risky  
-- ✅ **Lightweight** – runs smoothly on low-resource devices  
-- ✅ **Ready for extensions & enterprise use**  
+-  **Real-time** page analysis  
+-  **Multi-layer detection** (not just URLs!)  
+-  **Explains** why something is risky  
+-  **Lightweight** – runs smoothly on low-resource devices  
+-  **Ready for extensions & enterprise use**  
 
 ---
 
-##  Project Structure
+
+
