@@ -14,22 +14,22 @@ class ScanRequest(BaseModel):
 
 @router.post("/page")
 async def scan_page(payload: ScanRequest):
-    # 1. Gather content
+    
     html = payload.html or ""
     js = payload.js or ""
     url = payload.url or ""
 
-    # 2. Heuristics
+    
     heuristics_report = analyze_heuristics(url=url, html=html, js=js)
 
-    # 3. Signatures
+   
     yara_matches = run_yara(html + js)
     clam_matches = run_clam_like(html + js)
 
-    # 4. ML inference (feature extraction minimal stub)
+    
     ml_score, ml_explain = infer_model(url=url, html=html)
 
-    # 5. Aggregate result
+    
     score = max(ml_score, heuristics_report.get("suspicion_score", 0))
     reasons = {
         "heuristics": heuristics_report.get("reasons"),

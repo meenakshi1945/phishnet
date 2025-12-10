@@ -11,19 +11,19 @@ def shannon_entropy(data: str) -> float:
 
 def detect_obfuscation(js: str) -> list:
     patterns = {
-        # Detect base64 usage reliably
+        
         "base64_decode": r"(atob\s*\(|btoa\s*\()",
 
-        # Detect any base64-like blob of 20+ chars
+        
         "base64_blob": r"[A-Za-z0-9+/]{20,}={0,2}",
 
-        # Detect eval-based execution
+        
         "eval_usage": r"eval\s*\(",
 
-        # Detect hex-escaped JS
+        
         "hex_escape": r"(\\x[0-9A-Fa-f]{2})",
 
-        # Detect Function constructor obfuscation
+        
         "function_constructor": r"new Function\s*\(",
     }
 
@@ -43,25 +43,25 @@ def analyze_heuristics(url: str="", html: str="", js: str="") -> Dict:
     reasons = []
     score = 0.0
 
-    # Entropy checks on scripts and HTML
+    
     ent_html = shannon_entropy(html or "")
     ent_js = shannon_entropy(js or "")
     if ent_js > 3.8:
         reasons.append(f"high_js_entropy:{ent_js:.2f}")
         score = max(score, 0.6)
 
-    # Obfuscation tokens
+    
     obf = detect_obfuscation(js)
     if obf:
         reasons.append(f"obfuscation:{','.join(obf)}")
         score = max(score, 0.7)
 
-    # Hidden iframes
+    
     if count_iframes(html) > 2:
         reasons.append("multiple_iframes")
         score = max(score, 0.55)
 
-    # Redirect chain heuristic (simple: count meta refresh)
+    
     if "meta refresh" in (html or "").lower() or "location.href" in (js or ""):
         reasons.append("redirect_behavior")
         score = max(score, 0.6)

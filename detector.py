@@ -77,7 +77,7 @@ class PhishingDetector:
                 score += 15
                 warnings.append("Uses URL shortening service")
             
-            # Determine risk level
+            
             if score >= 50:
                 risk_level = "🚨 HIGH RISK"
                 recommendation = "DO NOT PROCEED - Likely phishing site"

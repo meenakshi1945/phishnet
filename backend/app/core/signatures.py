@@ -5,7 +5,7 @@ from pathlib import Path
 
 RULES_PATH = Path(__file__).parent.parent / "rules"
 
-# Load YARA rules (sample)
+
 yara_rules = None
 try:
     yara_rules = yara.compile(str(RULES_PATH / "yara_rules.yar"))
@@ -18,7 +18,7 @@ def run_yara(text: str):
     matches = yara_rules.match(data=text)
     return [m.rule for m in matches]
 
-# Clam-like signatures: simple prioritized regex list in JSON
+
 def run_clam_like(text: str):
     p = RULES_PATH / "clam_like_signatures.json"
     try:

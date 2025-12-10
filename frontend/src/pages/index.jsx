@@ -1,10 +1,24 @@
-import Link from 'next/link'
-export default function Home(){
+import Layout from "../components/Layout";
+import Link from "next/link";
+
+export default function Home() {
   return (
-    <main style={{maxWidth:900, margin:"48px auto", fontFamily:"Inter, sans-serif"}}>
-      <h1>PhishNet — Demo</h1>
-      <p>Minimal client to send page HTML/JS for scanning.</p>
-      <Link href="/demo">Open Scan Demo</Link>
-    </main>
-  )
+    <Layout>
+      <div className="card">
+        <h2 style={{ margin: 0, marginBottom: 12, fontSize: 20 }}>
+          Start Analysis
+        </h2>
+
+        <p style={{ color: "var(--text-light)", marginBottom: 22 }}>
+          Submit webpage data for hybrid phishing risk evaluation.
+        </p>
+
+        <Link href="/demo">
+          <button>Open Console</button>
+        </Link>
+      </div>
+    </Layout>
+  );
 }
+
+

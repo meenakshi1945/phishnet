@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 import joblib
 import os
 
-# Toy dataset: 1000 rows of synthetic features
+
 X = np.random.rand(1000,3).astype("float32") * np.array([200,5000,8])
 y = (X[:,1] / (X[:,0]+1) > 20).astype(int)
 
