@@ -1,30 +1,62 @@
-# PhishNet - Phishing Detection Platform
+#  PhishNet – A Browser-Native Intelligence Framework for Real-Time Phishing Detection
 
-A web application that identifies and flags suspicious websites, URLs, and phishing attempts using advanced detection algorithms.
 
-## Features
 
-- **Real-time URL Analysis** - Instant phishing detection
-- **Risk Scoring System** - 0-100 risk score with detailed breakdown
-- **Multiple Detection Methods**:
-  - Suspicious TLD detection
-  - IP address masking
-  - URL length analysis
-  - HTTPS verification
-  - Keyword analysis
-  - Domain reputation
-- **Beautiful Web Interface** - Responsive Bootstrap design
-- **Example URLs** - Test with safe and suspicious examples
+---
 
-## Tech Stack
+##  What is PhishNet?
 
-- **Backend**: Python, Flask
-- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap
-- **Security**: Custom phishing detection algorithms
-- **Analysis**: Regex patterns, domain parsing, risk assessment
+PhishNet is a **real-time phishing detection system** that goes beyond just URLs.  
+It’s a **hybrid intelligence framework** that watches over your web pages like a friendly digital guard dog 
 
-## How to Run
+>  *Think of it as your browser's personal bodyguard against sneaky phishing pages!*
 
-1. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
+---
+
+##  Why PhishNet is Special
+
+| Old School Methods | 🆚 | PhishNet’s Magic  |
+|-------------------|----|---------------------|
+| Only checks URLs | → | Scans **HTML, JavaScript, DOM, and behavior** |
+| Misses hidden scripts | → | Detects **obfuscated payloads & iframes** |
+| No explanations | → | Shows **why** a page is risky |
+| Slow & offline | → | **Real-time + lightweight** on-device inference |
+| URL-only ML | → | **Heuristics + Signatures + Lightweight ML** |
+
+---
+
+## How It Works 
+
+1. **You browse** 
+2. PhishNet **sneakily scans** the page 
+3. Engines wake up:
+   -  **Heuristics Engine** – “Hmm, this looks fishy…”
+   -  **Signature Engine** – “I’ve seen this trick before”
+   -  **ML Model** – “My spider-sense is tingling”
+4. You get a **friendly warning + reasons** 
+
+---
+
+##  Tech Stack 
+
+| Layer | Tools |
+|-------|-------|
+| Frontend | React / Next.js / Electron |
+| Backend | FastAPI (speedy!) |
+| ML | LightGBM, XGBoost, TF Lite |
+| Signatures | YARA + ClamAV-style patterns |
+| Heuristics | Entropy scanner, redirect tracker, DOM parser |
+
+---
+
+##  Key Features
+
+- ✅ **Real-time** page analysis  
+- ✅ **Multi-layer detection** (not just URLs!)  
+- ✅ **Explains** why something is risky  
+- ✅ **Lightweight** – runs smoothly on low-resource devices  
+- ✅ **Ready for extensions & enterprise use**  
+
+---
+
+##  Project Structure
